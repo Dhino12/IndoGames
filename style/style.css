@@ -11,6 +11,11 @@ body{
     background-color: #f2f2f2;
 } 
 
+main{
+    padding-bottom: 5px;
+    overflow: auto;
+}
+
 nav li {
     list-style-type: none;
     padding: 10px;
@@ -105,6 +110,7 @@ nav,ul {
 
 .card-game h2, .card-game p{
     margin: 10px 0 0 10px;
+    font-size: 2vh;
 } 
 
 .card-game > p  {
@@ -144,10 +150,8 @@ nav,ul {
     overflow: hidden;
 }
 
-.tranding-games{ 
+.img-tranding-games{ 
     max-height: 250px;
-    object-fit: contain;
-    object-position: center; 
     border-radius: 15px;
 }
 .container-mobile-games{
@@ -156,8 +160,7 @@ nav,ul {
 }
 
 .mobile-games{
-    width: 100%;
-    height: 250px;
+    width: 100%; 
     padding: 10px;
     background-color: #efefef;
     border-radius: 20px;
@@ -215,8 +218,7 @@ input.tab-genre-radio{
 }
 
 label.tab-genre{
-    display: inline-block;    
-    float: left;
+    display: inline-block;  
     padding: 10px 30px;
     cursor: pointer;
     z-index: 99;
@@ -260,10 +262,25 @@ label.tab-genre{
 
     /* Content ganre */
 .img-genre-card{
-    max-width: 300px;
-    border-radius: 20px;
+    max-width: 300px; 
     display: inline-block;
+    position: absolute;
+    transition: 0.5s ease;
 }
+
+.img-genre-card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.img-card{
+    width: 300px;
+    height: 170px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
 .card-genre-game{ 
     max-width: 320px;
     vertical-align: text-top;
@@ -280,8 +297,7 @@ label.tab-genre{
 
 /* End Tab Genre */
 
-.sidebar{
-    position: absolute;
+.sidebar{ 
     width: 18%;
     height: 100%;
     background: linear-gradient(#fff, #f2f2f2);
@@ -343,6 +359,7 @@ label.tab-genre{
     background-color: #f7f7f7;
     padding: 20px 10px;
     border-radius: 10px;
+    transition: 0.3s ease;
 }
 
 .sidebar a{
@@ -357,4 +374,36 @@ label.tab-genre{
     color: #f7f7f7;
     font-weight: bold;
     cursor: pointer;
+}
+
+.footer{
+    background-color: #333;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .sidebar{
+        width: 100%;
+        padding: 0;
+    }
+
+    .content, .container-mobile-games, .container-trand-games {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .mobile-games{
+        height: auto;
+    }
+
+    .img-card-game{
+        width: 150px;
+    }
+
+    .card-game{
+        margin: 0 10px 30px 0;
+    }
 }
